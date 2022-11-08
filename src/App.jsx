@@ -4,6 +4,7 @@ import { Outlet, Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbarcomp from './components/NavbarComp'
 
+
 function LogIn({ login }) {
     const init = { username: "", password: "" };
     const [loginCredentials, setLoginCredentials] = useState(init);
@@ -17,18 +18,19 @@ function LogIn({ login }) {
     }
 
     return (
+
         <div>
-            <form onChange={onChange} id="login"
-            style={{
-                // backgroundColor: "blue"
-            }}
+            
+            <form onChange={onChange} 
             >
                 <h2>Login</h2>
                 <input placeholder="User Name" id="username" />
                 <input placeholder="Password" id="password" />
                 <button onClick={performLogin}>Login</button>
             </form>
-        </div>
+           
+            <Outlet />
+        </div> 
     )
 
 }

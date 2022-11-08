@@ -1,23 +1,30 @@
 import ReactDOM from 'react-dom/client'
+import { render } from "react-dom";
 import App from './App'
+import Navbarcomp from './components/NavbarComp'
+
 import {
     BrowserRouter,
     Routes,
     Route,
 } from "react-router-dom";
 import './style/index.css'
-import StartCodeGuide from "./components/StartCodeGuide.jsx";
-import NavbarComp from "./components/NavbarComp.jsx";
+import RenameMe from "./components/RenameMe.jsx";
+import WelcomePage from './pages/WelcomePage';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const rootElement = document.getElementById("root");
+render(
+    
   <BrowserRouter>
+  
+  <Navbarcomp/>
+
       <Routes>
-          <Route path="/" element={<NavbarComp/>}>
-              <Route path="login" element={<App />}/>
-              <Route path="startCodeGuide" element={<StartCodeGuide/>}/>
 
-          </Route>
-
+            <Route path="/" element={<WelcomePage/>}/>
+            <Route path="renameMe" element={<RenameMe/>}/>
+            <Route path="login" element={<App/>}/>
+              
           <Route
               path="*"
               element={
@@ -26,9 +33,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                   </main>
               }
           />
-
       </Routes>
-  </BrowserRouter>
+  </BrowserRouter>,
+    rootElement
 
 
 
