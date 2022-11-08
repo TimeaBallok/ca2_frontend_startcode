@@ -1,6 +1,5 @@
 import React, { useState,useEffect } from "react"
 import facade from "./apiFacade";
-import { Outlet, Link } from "react-router-dom";
 
 function LogIn({ login }) {
     const init = { username: "", password: "" };
@@ -22,18 +21,6 @@ function LogIn({ login }) {
                 <input placeholder="Password" id="password" />
                 <button onClick={performLogin}>Login</button>
             </form>
-
-
-            <nav
-                style={{
-                    borderBottom: "solid 1px",
-                    paddingBottom: "1rem",
-                }}
-            >
-                <Link to="renameMe">Rename Me!</Link>
-
-            </nav>
-            <Outlet />
         </div>
     )
 
@@ -54,6 +41,7 @@ function LoggedIn() {
 }
 
 function App() {
+
     const [loggedIn, setLoggedIn] = useState(false)
 
     const logout = () => { facade.logout()
@@ -72,6 +60,5 @@ function App() {
                 </div>)}
         </div>
     )
-
 }
 export default App;

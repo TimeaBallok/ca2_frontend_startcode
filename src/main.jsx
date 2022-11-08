@@ -1,5 +1,4 @@
 import ReactDOM from 'react-dom/client'
-import { render } from "react-dom";
 import App from './App'
 import {
     BrowserRouter,
@@ -7,15 +6,18 @@ import {
     Route,
 } from "react-router-dom";
 import './style/index.css'
-import RenameMe from "./components/RenameMe.jsx";
+import StartCodeGuide from "./components/StartCodeGuide.jsx";
+import NavBar from "./components/NavBar.jsx";
 
-const rootElement = document.getElementById("root");
-render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
       <Routes>
-          <Route path="/" element={<App/>}>
-              <Route path="renameMe" element={<RenameMe/>}/>
+          <Route path="/" element={<NavBar/>}>
+              <Route path="login" element={<App />}/>
+              <Route path="startCodeGuide" element={<StartCodeGuide/>}/>
+
           </Route>
+
           <Route
               path="*"
               element={
@@ -24,9 +26,9 @@ render(
                   </main>
               }
           />
+
       </Routes>
-  </BrowserRouter>,
-    rootElement
+  </BrowserRouter>
 
 
 
