@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom/client'
 import { render } from "react-dom";
-import App from './App'
+import LogIn from './components/LogIn.jsx'
 import Navbarcomp from './components/NavbarComp'
 
 import {
@@ -23,7 +23,7 @@ render(
 
             <Route path="/" element={<WelcomePage/>}/>
             <Route path="renameMe" element={<RenameMe/>}/>
-            <Route path="login" element={<App/>}/>
+            <Route path="login" element={<LogIn/>}/>
               
           <Route
               path="*"
