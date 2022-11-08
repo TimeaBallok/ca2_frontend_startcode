@@ -8,24 +8,21 @@ import {
 import './style/index.css'
 import StartCodeGuide from "./components/StartCodeGuide.jsx";
 import NavbarComp from "./components/NavbarComp.jsx";
+import NavBar from "./components/NavBar.jsx";
+import GetJoke from "./components/getJoke.jsx";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
       <Routes>
-          <Route path="/" element={<NavbarComp/>}>
-              <Route path="login" element={<App />}/>
-              <Route path="startCodeGuide" element={<StartCodeGuide/>}/>
-
-          </Route>
-
-          <Route
-              path="*"
-              element={
+          <Route path="/" element={<NavBar/>}/>
+          <Route path="login" element={<App />}/>
+          <Route path="startCodeGuide" element={<StartCodeGuide/>}/>
+          <Route path="getJoke" element={<GetJoke/>}/>
+          <Route path="*" element={
                   <main style={{ padding: "1rem" }}>
                       <p>There's nothing here!</p>
                   </main>
-              }
-          />
+          }/>
 
       </Routes>
   </BrowserRouter>

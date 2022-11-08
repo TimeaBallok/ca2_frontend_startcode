@@ -11,7 +11,8 @@ function NavBar(props) {
                 }}
             >
                 <Link to="startCodeGuide">Guide</Link> { "|| " }
-                <Link to="login">Login</Link>
+                <Link to="login">Login</Link> { "|| " }
+                <Link to="fetchedWhateverDataFromExternalServers">Fetch data!</Link>
 
             </nav>
             <Outlet />
