@@ -1,6 +1,8 @@
 import React, { useState,useEffect } from "react"
 import facade from "./apiFacade";
 import { Outlet, Link } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbarcomp from './components/NavbarComp'
 
 function LogIn({ login }) {
     const init = { username: "", password: "" };
@@ -15,25 +17,52 @@ function LogIn({ login }) {
     }
 
     return (
+
         <div>
-            <h2>Login</h2>
-            <form onChange={onChange} >
+            <Navbarcomp/>
+            
+            <br />
+            <br />
+            <br />
+
+            
+
+
+            <form onChange={onChange} id="login" 
+            style={{
+                
+                // backgroundColor: "blue"
+                
+                
+            }}
+            >
+                <h2>Login</h2>
                 <input placeholder="User Name" id="username" />
                 <input placeholder="Password" id="password" />
                 <button onClick={performLogin}>Login</button>
             </form>
+           
 
-            <nav
+            {/* <nav id="navbar"
                 style={{
                     borderBottom: "solid 1px",
                     paddingBottom: "1rem",
+                    placeItems: "center",
+                    position: "fixed",
+                    top: 10,
                 }}
             >
-                <Link to="renameMe">Rename Me!</Link>
+                <Link to="renameMe">Vores side!</Link> {"| "}
+                <Link to="renameMe">Rename Me!</Link> {"| "}
+                <Link to="renameMe">Eksempel</Link> {"| "}
+                <Link to="renameMe">Eksempel</Link> {"| "}
+                <Link to="renameMe">Eksempel</Link> {"| "}
+                <Link to="renameMe">Eksempel</Link> {"| "}
+                <Link to="renameMe">Eksempel</Link> {"| "}
 
-            </nav>
+            </nav> */}
             <Outlet />
-        </div>
+        </div> 
     )
 
 }
