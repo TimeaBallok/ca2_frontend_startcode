@@ -7,12 +7,12 @@ import {
 } from "react-router-dom";
 import './style/index.css'
 import StartCodeGuide from "./components/StartCodeGuide.jsx";
-import NavBar from "./components/NavBar.jsx";
+import NavbarComp from "./components/NavbarComp.jsx";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
       <Routes>
-          <Route path="/" element={<NavBar/>}>
+          <Route path="/" element={<NavbarComp/>}>
               <Route path="login" element={<App />}/>
               <Route path="startCodeGuide" element={<StartCodeGuide/>}/>
 
