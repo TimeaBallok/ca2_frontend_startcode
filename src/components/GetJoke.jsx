@@ -12,7 +12,10 @@ function GetJoke(props) {
 
     return (
         <div>
-            {jokeFromServer}
+           <h2>This is a dad joke:</h2>
+            <h5>{jokeFromServer[0]}</h5> <br/><br/>
+            <h2>This is a Chuck Norris joke:</h2>
+            <h5>{jokeFromServer[1]}</h5>
         </div>
     )
 }
