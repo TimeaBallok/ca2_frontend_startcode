@@ -1,4 +1,4 @@
-const URL = "http://localhost:8080/ca2";
+import URL from "../settings.js";
 
 function handleHttpErrors(res) {
     if (!res.ok) {
