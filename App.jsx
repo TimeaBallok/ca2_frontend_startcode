@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Navbarcomp from "./src/components/NavbarComp.jsx";
-import WelcomePage from "./src/pages/WelcomePage.jsx";
-import About from "./src/pages/About.jsx";
+import WelcomePage from "./src/components/WelcomePage.jsx";
+import About from "./src/components/About.jsx";
 import LogIn from "./src/components/LogIn.jsx";
 import GetJoke from "./src/components/GetJoke.jsx";
 import {Alert} from "react-bootstrap";
