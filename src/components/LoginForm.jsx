@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import {Outlet} from "react-router-dom";
 
-function LoginForm({ login }) {
-    const init = { username: "", password: "" };
-    const [loginCredentials, setLoginCredentials] = useState(init);
+function LoginForm({login, loginCredentials, setLoginCredentials}) {
+    // const init = { username: "", password: "" };
+    // const [loginCredentials, setLoginCredentials] = useState(init);
 
     const performLogin = (evt) => {
         evt.preventDefault();

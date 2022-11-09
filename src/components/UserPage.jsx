@@ -4,7 +4,7 @@ import facade from "../apiFacade.js";
 function UserPage() {
     const [dataFromServer, setDataFromServer] = useState("Loading...")
 
-    useEffect(() => { facade.fetchData().then(data=> setDataFromServer(data.msg));
+    useEffect(() => { facade.fetchData("info/user", data=> setDataFromServer(data.msg), "");
     }, [])
 
     return (

@@ -24,14 +24,44 @@ function apiFacade() {
         localStorage.removeItem("jwtToken");
     }
 
-
-    const login = (user, password) => {const options = makeOptions("POST", true,{username: user, password: password });
+    const login = (user, password, setLoggedIn, setErrorMessage) =>
+    {
+        const options = makeOptions("POST", true, { username: user, password: password });
         return fetch(URL + "/api/login", options)
             .then(handleHttpErrors)
-            .then(res => {setToken(res.token) })
+            .then(res =>
+            {
+                setToken(res.token)
+                setLoggedIn(true);
+                setErrorMessage('Logged in');
+            })
+            .catch((err) =>
+            {
+                if (err.status)
+                {
+                    err.fullError.then((e) => setErrorMessage(e.code + ': ' + e.message));
+                } else
+                {
+                    setErrorMessage('Network error');
+                }
+            });
     }
-    const fetchData = () => {const options = makeOptions("GET",true); //True add's the token
-        return fetch(URL + "/api/info/user", options).then(handleHttpErrors);
+
+    const fetchData = (endpoint, updateAction, SetErrorMessage) =>
+    {
+        const options = makeOptions("GET", true); //True add's the token
+        return fetch(URL + "/api/" + endpoint, options)
+            .then(handleHttpErrors)
+            .then((data) => updateAction(data))
+            .catch(err =>
+            {
+                if (err.status)
+                {
+                    console.log(err)
+                    err.fullError.then(e => SetErrorMessage(e.code + ": " + e.message))
+                }
+                else { SetErrorMessage("Network error"); }
+            })
     }
 
     const fetchJoke = () => {const options = makeOptions("GET",true); //True add's the token
