@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom/client'
 import { render } from "react-dom";
-import App from './App'
+import LogIn from './components/LogIn.jsx'
 import Navbarcomp from './components/NavbarComp'
 
 import {
@@ -11,6 +11,8 @@ import {
 import './style/index.css'
 import RenameMe from "./components/RenameMe.jsx";
 import WelcomePage from './pages/WelcomePage';
+import GetJoke from "./components/GetJoke.jsx";
+import About from "./pages/About.jsx";
 
 const rootElement = document.getElementById("root");
 render(
@@ -22,10 +24,9 @@ render(
       <Routes>
 
             <Route path="/" element={<WelcomePage/>}/>
-            <Route path="renameMe" element={<RenameMe/>}/>
-            <Route path="login" element={<App/>}/>
-            <Route path="jokes" element={}
-              
+            <Route path="about" element={<About/>}/>
+            <Route path="login" element={<LogIn/>}/>
+            <Route path="joke" element={<GetJoke/>}/>
           <Route
               path="*"
               element={

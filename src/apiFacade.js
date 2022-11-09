@@ -31,7 +31,7 @@ function apiFacade() {
             .then(res => {setToken(res.token) })
     }
     const fetchData = () => {const options = makeOptions("GET",true); //True add's the token
-        return fetch(URL + "/api/info/user", options).then(handleHttpErrors);
+        return fetch(URL + "/api/info/admin", options).then(handleHttpErrors);
     }
 
     const fetchJoke = () => {const options = makeOptions("GET",true); //True add's the token
