@@ -33,6 +33,11 @@ function apiFacade() {
     const fetchData = () => {const options = makeOptions("GET",true); //True add's the token
         return fetch(URL + "/api/info/user", options).then(handleHttpErrors);
     }
+
+    const fetchJoke = () => {const options = makeOptions("GET",true); //True add's the token
+        return fetch(URL + "/api/joke/haha", options).then(handleHttpErrors);
+    }
+
     const makeOptions= (method,addToken,body) =>{
         var opts = {
             method: method,
@@ -50,6 +55,7 @@ function apiFacade() {
         return opts;
     }
     return {
+        fetchJoke,
         makeOptions,
         setToken,
         getToken,

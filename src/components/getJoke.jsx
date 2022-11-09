@@ -1,17 +1,15 @@
 import React from 'react';
-import {useState, useEffect} from "react";
+import facade from "../apiFacade";
 
 function GetJoke(props) {
 
-    const [backendData, setBackendData] = useState([])
+    const jokes = facade.fetchJoke().then()
 
-    useEffect(() => {
-        return fetch("http://localhost:8080/ca2/joke/haha")
-            .then(res => res.json())
-            .then(data => setBackendData(data))
-    }, [])
-
-    console.log(backendData)
+    return (
+        <div>
+            {jokes}
+        </div>
+    )
 }
 
 export default GetJoke;

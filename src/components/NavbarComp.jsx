@@ -1,27 +1,43 @@
-import React, { Component } from 'react'
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import {Navbar, Nav, Container} from 'react-bootstrap'
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+import Login from '../pages/Login';
+import RenameMe from './RenameMe';
 
-function BasicExample() {
+
+// import About from './pages/About';
+// import Home from './pages/Home';
+// import Login from './pages/Login';
+
+
+function ColorSchemesExample() {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
-      <Container>
-        <Navbar.Brand href="#home">CA2-Projekt</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+    <div>
+    <>
+      <Navbar bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand as={Link} to="/">CA2-Startcode</Navbar.Brand>
           <Nav className="me-auto">
-
-            {/* Her er links og deres pathnavn */}
-
-            <Nav.Link href="/startcodeguide">Guide</Nav.Link>
-            <Nav.Link href="login">Log in</Nav.Link>
+            <Nav.Link as={Link} to="/renameme">Renameme</Nav.Link>
+            <Nav.Link as={Link} to="/login">Login</Nav.Link>
           </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+        </Container>
+      </Navbar>
+    </>
+
+    <div>  
+
+    </div>
+
+
+    </div>
+
+    
   );
 }
 
-export default BasicExample;
+export default ColorSchemesExample;
